@@ -1,0 +1,81 @@
+:root { --ink:#1b2430; --line:#d5dbe1; --panel:#fff; --bg:#e3e7ea; --accent:#ff5a1f; --muted:#5d6b79; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.45 Roboto, sans-serif; }
+header { display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:12px 20px; background:var(--ink); color:#fff; }
+h1 { font:700 24px Oswald, sans-serif; letter-spacing:.02em; margin:0 auto 0 0; }
+h3 { font:700 15px Oswald, sans-serif; margin:0 0 10px; letter-spacing:.03em; }
+main { display:grid; grid-template-columns:260px minmax(0,1fr) 290px; gap:16px; padding:16px; align-items:start; }
+aside, .center { display:flex; flex-direction:column; gap:12px; }
+section { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:14px; display:flex; flex-direction:column; gap:10px; }
+.stage { overflow:auto; background:#eef1f3; border:1px solid var(--line); border-radius:6px; display:flex; justify-content:center; }
+.stage canvas { display:block; }
+button, select, textarea, .file { font:inherit; border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:4px; padding:7px 10px; cursor:pointer; }
+button:hover, .file:hover { border-color:var(--ink); }
+button.on { background:var(--ink); color:#fff; border-color:var(--ink); }
+header button.on { background:#fff; color:var(--ink); }
+button.primary { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:700; }
+button:disabled { opacity:.6; cursor:wait; }
+button.danger { color:#b3261e; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.file { text-align:center; } .file input { display:none; }
+.seg { display:flex; } .seg button { border-radius:0; min-width:80px; } .seg button:first-child { border-radius:4px 0 0 4px; } 
+.seg button:last-child { border-radius:0 4px 4px 0; }
+.types { justify-content:center; } .types button { flex:1; max-width:140px; }
+.row, .chips { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+.row input[type=color] { width:38px; height:34px; padding:2px; border:1px solid var(--line); border-radius:4px; }
+label { display:flex; flex-direction:column; gap:4px; color:var(--muted); font-size:13px; }
+label span { float:right; color:var(--ink); font-weight:700; }
+textarea { width:100%; resize:vertical; }
+.sw { width:30px; height:30px; padding:0; border-radius:50%; border:2px solid var(--line); }
+.sw.on { outline:2px solid var(--accent); outline-offset:2px; }
+dl { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; margin:0; font-size:13px; }
+dt { color:var(--muted); } dd { margin:0; text-align:right; }
+.hint { color:var(--muted); font-size:13px; margin:0; } .warn { color:#b3261e; font-size:13px; margin:0; }
+@media (max-width:1100px) { main { grid-template-columns:1fr; } .center { order:-1; } }
+.stage { position:relative; }
+.loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(238,241,243,.75); font:700 16px Oswald, sans-serif; }
+label.chk { flex-direction:row; align-items:center; gap:8px; }
+.grow { flex:1; min-width:0; font:inherit; border:1px solid var(--line); border-radius:4px; padding:7px 10px; }
+form.row { flex-wrap:nowrap; }
+.clip-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; max-height:230px; overflow:auto; }
+.clip-grid button { padding:3px; aspect-ratio:1; background:#fff; }
+.clip-grid img { width:100%; height:100%; object-fit:contain; display:block; }
+.grad { width:34px; height:24px; padding:0; border-radius:4px; }
+.grad-preview { flex:1; height:30px; border-radius:4px; border:1px solid var(--line); }
+label.chk input[type=color] { width:38px; height:34px; padding:2px; }
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #f8f8f8;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.social-links {
+  margin-top: 12px;
+}
+
+.social-links a {
+  margin: 0 12px;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.social-links a:first-child {
+  color: #e1306c; /* Instagram */
+}
+
+.social-links a:last-child {
+  color: #1877f2; /* Facebook */
+}
